@@ -1,0 +1,23 @@
+package user;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class UserDAO {
+private Connection conn;//DB 와 자바의 연결
+private PreparedStatement pstmt;//쿼리문 대기 및 설정
+private ResultSet rs;//결과값 받아오기
+	public UserDAO() {
+	try {
+		String dbURL="jdbc:oracle:thin:@localhost:1521:xe";
+		String dbID="bb";
+		String dbPassword="bb";
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		conn=DriverManager.getConnection(dbURL,dbID,dbPassword);
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	}
+}

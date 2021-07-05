@@ -1,0 +1,7 @@
+package user;
+
+import java.sql.Connection;
+
+public class UserDAO {
+private Connection conn;//DB 와 자바의 연결
+}

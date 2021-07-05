@@ -1,0 +1,30 @@
+package com.exam.controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class WriteController extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/write.jsp");
+		rd.forward(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		HttpSession session = req.getSession();
+		String sessionID = (String) session.getAttribute("sessionID");
+		if (sessionID == null) {
+			sessionID = "비회원";
+	}
+	
+	String bbsCategory=req
+}

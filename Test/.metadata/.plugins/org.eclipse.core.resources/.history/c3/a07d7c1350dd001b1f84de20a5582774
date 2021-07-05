@@ -1,0 +1,36 @@
+package com.exam.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class BbsDao {
+	private static BbsDao bbsDao=new BbsDao();
+	private Connection con;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	private int result=0;
+	
+	private BbsDao() {
+		super();
+	}
+	
+	public static BbsDao getInstance() {
+		return bbsDao;
+	}
+	
+	public Connection getConnect() {
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String id = "ASDF", pw = "1234";
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con = DriverManager.getConnection(url, id, pw);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return con;
+	}
+}
