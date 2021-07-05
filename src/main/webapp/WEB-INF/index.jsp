@@ -18,5 +18,6 @@
 	<a href="bbs.do"><button>게시판</button></a><br />
 </c:if>
 <!-- https://great-yo.tistory.com/82?category=786047 참고 -->
+<!-- 이클립스버젼 -->
 </body>
 </html>
